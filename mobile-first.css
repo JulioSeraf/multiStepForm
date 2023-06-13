@@ -1,3 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    min-height: 100Vh;
+}
+header{
+    display:flex;
+    background-image: url(assets/images/bg-sidebar-mobile.svg);
+    background-position: center center;
+    background-size: cover;
+    height: 30vh;
+    width: 100%;
+}
+.selection{
+    display: flex;
+    margin: 30px auto;
+}
+.selection .div__but button{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid white;
+    background-color: rgba(128, 128, 128, 0.16);
+
+}
+.selection p {
+    display: none;
+} 
+.mainGeneral{
+     display: flex;
+    flex-direction: column;
+    height: 60vh;
+    background-color: rgb(230, 230, 249);
+}
+.mainGeneral .info{
+    width:clamp(300px,90%, 600px);
+    height: fit-content;
+    left: 50%;
+    top: 20%;
+    padding: 20px;
+    border-radius: 10px;
+    transform: translate(-50%);
+    background-color: white;
+    position: absolute;
+}
+.mainGeneral .info p{
+    width: 80%;
+    font-weight: bold;
+    margin: 10px 0;
+    color: rgba(0, 0, 0, 0.751);
+}
+.mainGeneral .info label{
+    display: block;
+}
+.mainGeneral .info input{
+    width: 100%;
+    padding:15px;
+    border: 1px solid gray;
+    margin-bottom: 15px;
+}
+.div__footer{
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+}
+.div__footer input{
+    width:clamp(100px,30%,200px);
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    float: right;
+    margin: 15px;
+}
+
 .infoPersonal{
     display: block;
 }
@@ -8,5 +89,8 @@
     display: none;
 }
 .finish{
+    display: none;
+}
+.finish-thank{
     display: none;
 }
