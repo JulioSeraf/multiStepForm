@@ -80,10 +80,10 @@ header{
 }
 
 .infoPersonal{
-    display: block;
+    display: none;
 }
 .yourPlan{
-    display: none;
+    display:block;
 }
 .addOns{
     display: none;
