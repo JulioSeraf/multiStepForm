@@ -3,9 +3,9 @@
     line-height: 1.4em;
 }
 .div-plans{
-    border: 1px solid black;
+    border: 1px solid rgba(128, 128, 128, 0.137);
     display: flex;
-    margin: 10px 0;
+    margin: 15px 0;
     border-radius: 10px;
 }
 .div-plans img{
@@ -19,13 +19,16 @@
     margin: 5px;
 }
 .info .month-year{
-    border: 1px solid black;
     display: flex;
+    background-color: hsl(231, 100%, 99%);
     border-radius: 10px;
 }
 .info .month-year label{
-    width: 30%;
+    width: 33%;
     margin:15px auto;
+}
+.info .month-year #imonth{
+   text-align: right;
 }
 .info .month-year .radiodiv{
     display: flex;
@@ -34,4 +37,14 @@
     height: 20px;
     border-radius: 20px;
     background-color: blue;
+}
+.info .month-year .radiodiv .radio-input{
+    margin: auto;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+}
+.info .month-year .radiodiv .radio-input:checked{
+    background-color: white;
 }

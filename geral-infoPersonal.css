@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     display: flex;
@@ -50,6 +51,7 @@ header{
     top: 20%;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.046);
     transform: translate(-50%);
     background-color: white;
     position: absolute;
@@ -64,11 +66,11 @@ header{
     font-weight: bold;
     margin: 10px 0;
 }
-.mainGeneral .info label{
+.mainGeneral .info .form-label{
     color:hsl(213, 96%, 18%);
     display: block;
 }
-.mainGeneral .info input{
+.mainGeneral .info .form-input{
     width: 100%;
     padding:15px;
     border: 1px solid gray;
@@ -82,21 +84,43 @@ header{
     width:clamp(100px,30%,200px);
     padding: 15px;
     border: none;
+    font-weight: bold;
     border-radius: 5px;
     background-color:  hsl(243, 100%, 62%);
     color: white;
-    float: right;
     margin: 15px 15px 0 0;
 }
+.div__footer .but-next{
+    float: right;
+}
+.div__footer .but-back{
+    margin:15px 0 0 15px ;
+    background-color: hsl(231, 100%, 99%);
+    color: gray;
+
+}
+.attribution{
+    font-size: 0.5em;
+    text-align: center;
+}
+.attribution a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: blue;
+}
+
+
+/* display de paginas ------------------------------------------------ */
+
 
 .infoPersonal{
-    display: none;
+    display:none;
 }
 .yourPlan{
-    display:block;
+    display:none;
 }
 .addOns{
-    display: none;
+    display:block ;
 }
 .finish{
     display: none;

@@ -1,0 +1,9 @@
+.add_div-service{
+    border: 1px solid black;
+    display: flex;
+    width: 100%;
+}
+.add_div-service .add_div-Ps{
+    flex-shrink:;
+    border: 1px solid;
+}
