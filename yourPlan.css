@@ -1,0 +1,37 @@
+#p__info-plan{
+    width: 100%;
+    line-height: 1.4em;
+}
+.div-plans{
+    border: 1px solid black;
+    display: flex;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+.div-plans img{
+    margin: 5px 10px;
+}
+.div-plans div .p-plan{
+    color: hsl(213, 96%, 18%);
+    
+}
+.div-plans div{
+    margin: 5px;
+}
+.info .month-year{
+    border: 1px solid black;
+    display: flex;
+    border-radius: 10px;
+}
+.info .month-year label{
+    width: 30%;
+    margin:15px auto;
+}
+.info .month-year .radiodiv{
+    display: flex;
+    margin: auto;
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: blue;
+}

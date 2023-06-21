@@ -5,14 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="mobile-first.css" media="all">
+  <link rel="stylesheet" href="geral-infoPersonal.css" media="all">
+  <link rel="stylesheet" href="yourPlan.css">
   <title>Frontend Mentor | Multi-step form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
@@ -49,44 +44,62 @@
 
   <main>
         <div class="infoPersonal mainGeneral">
-          <div class="info">
-            <h1>Personal info</h1>
-            <p>Please provide your name, email address, and phone number.</p>
-            <label for="itext" >Name</label>
-            <input type="text" id="itext" placeholder="e.g. Stephen King"></input>
-            <label for="iemail">Email Address</label>
-            <input type="email" id="iemail" placeholder="e.g. stephenking@lorem.com"></input>
-            <label for="inumber">Phone Number</label>
-            <input type="number" id="inumber" placeholder="e.g. +1 234 567 890"></input>
+          <div class="fundo-info">
+              <div class="info">
+                <h1>Personal info</h1>
+                <p>Please provide your name, email address, and phone number.</p>
+                <label for="itext" >Name</label>
+                <input type="text" id="itext" placeholder="e.g. Stephen King"></input>
+                <label for="iemail">Email Address</label>
+                <input type="email" id="iemail" placeholder="e.g. stephenking@lorem.com"></input>
+                <label for="inumber">Phone Number</label>
+                <input type="number" id="inumber" placeholder="e.g. +1 234 567 890"></input>
+              </div>
           </div>
-          <div class="div__footer"><input type="submit" value="Next Step"></input></div>
+          <div class="div__footer"><button>Next Step</button></div>
         </div>
         
       <!-- Step 1 end -->
       <!-- Step 2 start -->
     <div class="yourPlan mainGeneral">
-        <h1>Select your plan</h1>
-        <p>You have the option of monthly or yearly billing.</p>
-        <div>
-            <img src="assets/images/icon-arcade.svg" alt="">
-            <p>Arcade</p>
-            <p>$9/mo</p>
+        <div class="fundo-info">
+            <div class="info">
+                <h1>Select your plan</h1>
+                <p id="p__info-plan">You have the option of monthly or yearly billing.</p>
+                <div class="div-plans">
+                    <img src="assets/images/icon-arcade.svg" alt="">
+                    <div>
+                        <p class="p-plan">Arcade</p>
+                        <p class="p-cash">$9/mo</p>
+                    </div>
+                </div>
+                <div class="div-plans">
+                    <img src="assets/images/icon-advanced.svg" alt="">
+                    <div>
+                        <p class="p-plan">Advanced</p>
+                        <p class="p-cash">$12/mo</p>
+                    </div>
+                </div>
+                <div class="div-plans">
+                    <img src="assets/images/icon-pro.svg" alt="">
+                    <div>
+                        <p class="p-plan">Pro</p>
+                        <p class="p-cash">$15/mo</p>
+                    </div>
+                </div>
+                <div class="month-year">
+                    <label for="month">Monthly</label>
+                    <div class="radiodiv">
+                        <input type="checkbox" name="check" id="month">
+                        <input type="checkbox" name="check" id="years">
+                    </div>
+                    <label for="years">Yearly</label>
+                </div>
+            </div>
         </div>
-        <div>
-            <p>Advanced</p>
-            <p>$12/mo</p>
-        </div>
-        <div>
-            <p>Pro</p>
-            <p>$15/mo</p>
-        </div>
-        <div>
-            <p>Monthly</p>
-            <p>Yearly</p>
-        </div>
-        <div>
-            <p>Go Back</p>
-            <p>Next Step</p>
+        <div class="div__footer">
+            <button>Go Back</button>
+            <button>Next Step</button>
         </div>
     </div>
       <!-- Step 2 end -->
@@ -128,12 +141,10 @@
         to email us at support@loremgaming.com.
       </div>
   </main>
-
   <!-- Step 5 end -->
-  
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </footer>
 </body>
 </html>
