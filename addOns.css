@@ -35,3 +35,57 @@
     margin: auto;
     padding-right:10px ;
 }
+
+/* Finishing Up Style ------------------------------------ */
+
+#p-finish{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.color{
+    background-color: hsla(213, 96%, 18%, 0.107);
+    border-radius: 10px;
+    padding: 10px;
+}
+.color > .line{
+    width: 95%;
+    background-color:rgba(0, 0, 0, 0.416);
+    margin: 5px auto;
+    height: 1px;
+}
+.onlineSer{
+   display: grid;
+   grid-template-columns: 70% 30%;
+}
+#colorArcade p{
+    color: hsl(213, 96%, 18%);
+}
+.onlineSer a{
+    color:gray;
+}
+.total{
+    margin: 10px 5px;
+}
+.total #p-money{
+    color: blue;
+}
+
+
+/* Thank you Style--------------------------------------------- */
+#div__img-thankYou{
+    width: 100%;
+}
+#img-thankYou{
+    width:clamp(50px,20%,300px);
+    margin: 50px 0 20px 0;
+}
+.thank-final{
+    text-align: center;
+}
+#p-final{
+    margin:20px auto 50px auto;
+    width: 100%;
+    padding: 0;
+    font-size: 0.8em;
+    line-height: 1.6em;
+}
