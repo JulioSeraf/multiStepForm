@@ -117,10 +117,10 @@ header{
     display:none;
 }
 .yourPlan{
-    display:block;
+    display:none;
 }
 .addOns{
-    display:none;
+    display:block;
 }
 .finish{
     display:none;

@@ -54,7 +54,7 @@
         position: relative;
     }
     .mainGeneral .fundo-info{
-        height: 90vh;
+        height: 85vh;
         background-color: white;
     }
     .mainGeneral .info{
@@ -98,6 +98,18 @@
     }
     .info .div-plans div{
         margin: 15px;
+    }
+
+    /* style Add-Ons desktop--------------------------------------------------------------------- */
+    .info #p__addOns{
+        margin:5px 0 30px 0;
+    }
+    .add_div-service{
+        padding: 10px;
+    }
+    .add_div-service .check input[type="checkbox"]{
+        width: 20px;
+        height: 20px;
     }
 
 }

@@ -1,5 +1,6 @@
 #p__info-plan{
     width: 100%;
+    color:  hsl(231, 11%, 63%);
     line-height: 1.4em;
 }
 .div-plans{
@@ -16,6 +17,7 @@
     
 }
 .div-plans div{
+    color:  hsl(231, 11%, 63%);
     margin: 5px;
 }
 .div-plans div p:first-child{
