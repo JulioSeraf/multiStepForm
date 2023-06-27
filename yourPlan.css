@@ -18,6 +18,10 @@
 .div-plans div{
     margin: 5px;
 }
+.div-plans div p:first-child{
+    font-weight: bolder;
+    color: hsl(214, 80%, 16%);
+}
 .info .month-year{
     display: flex;
     background-color: hsl(231, 100%, 99%);

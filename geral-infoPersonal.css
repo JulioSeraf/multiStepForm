@@ -28,7 +28,7 @@ header{
     border-radius: 50%;
     color: white;
     border: 1px solid white;
-    background-color: rgba(128, 128, 128, 0.16);
+    background-color: rgba(243, 243, 243, 0.16);
 
 }
 .selection p {
@@ -81,7 +81,7 @@ header{
     height: 8vh;
 }
 .div__footer button{
-    width:clamp(100px,30%,200px);
+    width:clamp(100px,30%,130px);
     padding: 15px;
     border: none;
     font-weight: bold;
@@ -114,10 +114,10 @@ header{
 
 
 .infoPersonal{
-    display:block;
+    display:none;
 }
 .yourPlan{
-    display:none;
+    display:block;
 }
 .addOns{
     display:none;

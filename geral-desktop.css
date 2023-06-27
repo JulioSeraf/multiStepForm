@@ -1,4 +1,12 @@
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 700px) and (max-width:1000px) {
+    .mainGeneral .info{
+        margin-top: 30px;
+    }
+    .mainGeneral .fundo-info{
+        height: 100vh;
+    }
+}
+@media screen and (min-width: 1000px) {
     body{
         display: flex;
         flex-direction: row;
@@ -12,16 +20,35 @@
     
     }
     main{
-        width: 75%;
+        width: 70%;
     }
     .selection{
         flex-direction: column;
+        padding-top: 40px;
+        margin: 0 20px;
+
     }
     .selection .div__but{
         display:flex;
+        margin: 10px 0;
+    }
+    .selection .div__but button{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+    }
+    .selection .div__p{
+        margin-left: 10px;
+    }
+    .selection .div__but p:first-child{
+        padding-top: 10px;
+        font-size: 1.1em;
+        color: rgba(255, 255, 255, 0.603);
     }
     .selection p {
         display: block;
+        color: white;
+        font-size: 1.2em;
     }
     main{
         position: relative;
@@ -35,8 +62,45 @@
         box-shadow: none;
         position:relative;
     }
+   
 
+    .mainGeneral .info h1{
+        font-size: 2.5em;
+    }
+    .mainGeneral .info #p__personal-info{
+        font-size: 1.2em;
+        margin:10px 0 20px 0;
+    }
+    .mainGeneral .info .form-label{
+        margin: 5px 0;
+    }
     footer{
         display: none;
     }
+
+    /* style desktop Select your plan--------------------------------------------------------- */
+    .yourplans-info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .info .div-plans{
+        cursor: pointer;
+        flex-direction:column;
+        justify-content: space-between;
+        border:1px solid black;
+        width: 30%;
+        height: 200px;
+    }
+    .info .div-plans img{
+        width:30%;
+        margin: 15px;
+    }
+    .info .div-plans div{
+        margin: 15px;
+    }
+
 }
+
+
+
