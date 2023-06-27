@@ -120,11 +120,11 @@ header{
     display:none;
 }
 .addOns{
-    display:block;
+    display:none;
 }
 .finish{
     display:none;
 }
 .finish-thank{
-    display: none;
+    display: block;
 }

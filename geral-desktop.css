@@ -111,6 +111,22 @@
         width: 20px;
         height: 20px;
     }
+    
+    /* style Finishing Up Desktop---------------------------------------------------------------- */
+    #p-finish{
+        margin: 5px 0 30px 0;
+    }
+    .onlineSer{
+        padding: 10px;
+    }
+
+    /* style Thank You Desktop-------------------------------------------------------------------- */
+    .thank-final #p-final{
+        font-size: 1.4em;
+    }
+    .thank-final #p-final br{
+        display:none;
+    }
 
 }
 
