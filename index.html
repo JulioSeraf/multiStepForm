@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="geral-infoPersonal.css" media="all">
   <link rel="stylesheet" href="yourPlan.css">
   <link rel="stylesheet" href="addOns.css">
+  <link rel="stylesheet" href="geral-desktop.css">
   <title>Frontend Mentor | Multi-step form</title>
 </head>
 <body>
@@ -15,28 +16,36 @@
   <!-- Sidebar start -->
 
   <header>
-      <div class="selection">
+      <nav class="selection">
         <div class="div__but">
             <button id="but-1">1</button>
-            <p>Step 1</p>
-            <p>Your info</p>
+            <div class="div__p">
+              <p>Step 1</p>
+              <p>Your info</p>
+            </div>
         </div>
         <div class="div__but">
              <button id="but-2">2</button>
-             <p>Step 2</p>
-             <p>Select plan</p>
+             <div>
+               <p>Step 2</p>
+               <p>Select plan</p>
+             </div>
         </div>
         <div class="div__but">
             <button id="but-3">3</button>
-            <p>Step 3</p>
-            <p>Add-ons</p>
+            <div>
+              <p>Step 3</p>
+              <p>Add-ons</p>
+            </div>
         </div>
         <div class="div__but">
             <button id="but-4">4</button>
-            <p>Step 4</p>
-            <p>Summary</p>
+            <div>
+              <p>Step 4</p>
+              <p>Summary</p>
+            </div>
         </div>
-      </div>
+      </nav>
   </header>
 
   <!-- Sidebar end -->
@@ -48,7 +57,7 @@
           <div class="fundo-info">
               <div class="info">
                 <h1>Personal info</h1>
-                <p>Please provide your name, email address, and phone number.</p>
+                <p id="p__personal-info">Please provide your name, email address, and phone number.</p>
                 <label class="form-label" for="itext" >Name</label>
                 <input class="form-input" type="text" id="itext" placeholder="e.g. Stephen King"></input>
                 <label class="form-label" for="iemail">Email Address</label>

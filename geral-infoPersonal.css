@@ -60,11 +60,11 @@ header{
 .mainGeneral .info h1{
     font-size: 1.6em;
 }
-.mainGeneral .info p{
-    width: 80%;
+.mainGeneral .info #p__personal-info{
+    width: 100%;
     color:hsla(213, 96%, 18%, 0.509) ;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 .mainGeneral .info .form-label{
     color:hsl(213, 96%, 18%);
@@ -114,7 +114,7 @@ header{
 
 
 .infoPersonal{
-    display:none;
+    display:block;
 }
 .yourPlan{
     display:none;
@@ -126,5 +126,5 @@ header{
     display:none;
 }
 .finish-thank{
-    display: block;
+    display: none;
 }

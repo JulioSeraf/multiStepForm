@@ -1,0 +1,42 @@
+@media screen and (min-width: 700px) {
+    body{
+        display: flex;
+        flex-direction: row;
+    }
+    header{
+        height: 95vh;
+        width: 30%;
+        margin:auto 10px;
+        border-radius: 10px;
+        background-image: url(assets/images/bg-sidebar-desktop.svg);
+    
+    }
+    main{
+        width: 75%;
+    }
+    .selection{
+        flex-direction: column;
+    }
+    .selection .div__but{
+        display:flex;
+    }
+    .selection p {
+        display: block;
+    }
+    main{
+        position: relative;
+    }
+    .mainGeneral .fundo-info{
+        height: 90vh;
+        background-color: white;
+    }
+    .mainGeneral .info{
+        width: 70%;
+        box-shadow: none;
+        position:relative;
+    }
+
+    footer{
+        display: none;
+    }
+}
