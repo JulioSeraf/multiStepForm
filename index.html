@@ -58,15 +58,26 @@
               <div class="info">
                 <h1>Personal info</h1>
                 <p id="p__personal-info">Please provide your name, email address, and phone number.</p>
-                <label class="form-label" for="itext" >Name</label>
-                <input class="form-input" type="text" id="itext" placeholder="e.g. Stephen King"></input>
-                <label class="form-label" for="iemail">Email Address</label>
-                <input class="form-input" type="email" id="iemail" placeholder="e.g. stephenking@lorem.com"></input>
-                <label class="form-label" for="inumber">Phone Number</label>
-                <input class="form-input" type="number" id="inumber" placeholder="e.g. +1 234 567 890"></input>
+                <form id="formy" method="post" autocomplete="off">
+                  <div>
+                    <label class="form-label" for="itext" name="text" >Name</label>
+                    <input class="form-input" type="text" id="itext" placeholder="e.g. Stephen King" required></input>
+                  </div>
+                  <div>
+                    <label class="form-label" for="iemail" name="email">Email Address</label>
+                    <input class="form-input" type="email" id="iemail" placeholder="e.g. stephenking@lorem.com" required></input>
+                  </div>
+                  <div class="divNumber">
+                    <label class="form-label" for="inumber" name="number">Phone Number</label>
+                    <p id="errorNumber">This field is required</p>
+                    <input class="form-input" maxlength="9" type="tel" id="inumber" placeholder="e.g. +1 234 567 890" required></input>
+                  </div>
+                </form>
               </div>
           </div>
-          <div class="div__footer"><button class="but-next">Next Step</button></div>
+          <div class="div__footer">
+            <button type="submit" id="enviar" form="formy" class="but-next">Next Step</button>
+          </div>
         </div>
         
       <!-- Step 1 end -->
