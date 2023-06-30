@@ -114,7 +114,7 @@ header{
 
 
 .infoPersonal{
-    display:none;
+    display:block;
 }
 .yourPlan{
     display:none;
@@ -126,5 +126,5 @@ header{
     display:none;
 }
 .finish-thank{
-    display: block;
+    display: none;
 }
