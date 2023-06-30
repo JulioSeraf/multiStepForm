@@ -3,6 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    
+--marineblue: hsl(213, 96%, 18%);
+--Purplishblue: hsl(243, 100%, 62%);
+--Pastelblue: hsl(228, 100%, 84%);
+--Lightblue: hsl(206, 94%, 87%);
+--Strawberryred: hsl(354, 84%, 57%);
+
+/* ### Neutral */
+
+--Coolgray: hsl(231, 11%, 63%);
+--Lightgray: hsl(229, 24%, 87%);
+--Magnolia:hsl(217, 100%, 97%);
+--Alabaster: hsl(231, 100%, 99%);
+--White: hsl(0, 0%, 100%);
+}
 body{
     display: flex;
     flex-direction: column;
@@ -26,9 +43,10 @@ header{
     height: 30px;
     margin: 10px;
     border-radius: 50%;
+    font-weight: bolder;
     color: white;
     border: 1px solid white;
-    background-color: rgba(243, 243, 243, 0.16);
+    background-color:transparent;
 
 }
 .selection p {
@@ -76,11 +94,15 @@ header{
     border: 1px solid gray;
     margin-bottom: 15px;
 }
+.mainGeneral .info .divNumber{
+    position: relative;
+}
 .mainGeneral .info #errorNumber{
+    display: none;
+    position: absolute;
     color: red;
     left: 70%;
-    top: 20%;
-
+    top: 0;
 }
 .div__footer{
     width: 100%;
