@@ -4,17 +4,33 @@
     line-height: 1.4em;
 }
 .div-plans{
-    border: 1px solid rgba(128, 128, 128, 0.137);
+    border: 1px solid  hsl(229, 24%, 87%);
     display: flex;
     margin: 15px 0;
     border-radius: 10px;
 }
+.div-plans:hover{
+    border: 1px solid hsl(213, 96%, 18%);
+    cursor: pointer ;
+}
 .div-plans img{
     margin: 5px 10px;
 }
+.div-plans .div-years{
+    display:none;
+    width: 100%;
+}
+.div-plans .div-month{
+    width: 100%;
+}
+.div-plans .div-years:last-child{
+    color:hsl(240, 96%, 18%);
+}
 .div-plans div .p-plan{
     color: hsl(213, 96%, 18%);
-    
+}
+.div-plans div .p-cash{
+    color:  hsl(231, 11%, 63%);
 }
 .div-plans div{
     color:  hsl(231, 11%, 63%);

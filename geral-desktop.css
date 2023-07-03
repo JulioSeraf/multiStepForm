@@ -88,7 +88,6 @@
         cursor: pointer;
         flex-direction:column;
         justify-content: space-between;
-        border:1px solid black;
         width: 30%;
         height: 200px;
     }
