@@ -38,12 +38,10 @@ s   }else{
         document.querySelectorAll('.priceYM').forEach((item)=>
         item.addEventListener('click',(valor)=>{
       
-            console.log(valor)
+            console.log(valor.target.id)
     
     } 
 ));
-    
- selectPrice(),
     document.querySelectorAll('.radio-input').forEach((but)=>{
         but.addEventListener('click', (e)=>{
             if(e.target.id === 'years'){
