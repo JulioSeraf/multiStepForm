@@ -7,21 +7,14 @@ const addOns = document.querySelector('.addOns');
 const finish = document.querySelector('.finish');
 let displayOn = false;
 let plan = null;
-let add = null;
+let add = [];
+let total = null;
+let addMoney = null;
 const butDisplays = document.querySelectorAll('.nav-but');
 const priceYears = document.querySelectorAll('.div-years');
 const priceMonth = document.querySelectorAll('.div-month');
 const errorYourPlan = document.querySelector('.error-yourPlan');
-const plans = [{
-    arcade: 9,
-    advanced:12,
-    pro: 15
-},{
-    arcade:90,
-    advanced: 120,
-    pro: 150
-}];
-
+const addOnsMoney = document.querySelectorAll('.p-moneyAddOns');
 class finalPlan{
     constructor(info,plan,experience){
         this.info = info;
@@ -90,9 +83,15 @@ item.addEventListener('click',()=>{
         but.addEventListener('click', (e)=>{
             if(e.target.id === 'years'){
                 displayOn = true;
+                addOnsMoney[0].textContent = '+$10/yr';
+                addOnsMoney[1].textContent = '+$20/yr';
+                addOnsMoney[2].textContent = '+$20/yr';
                 priceYears.forEach((item)=> item.style.display = 'block');
                 priceMonth.forEach((item)=> item.style.display = 'none');
             }else if(e.target.id === 'month'){
+                addOnsMoney[0].textContent = '+$1/mo';
+                addOnsMoney[1].textContent = '+$2/mo';
+                addOnsMoney[2].textContent = '+$2/mo';
                 priceYears.forEach((item)=> item.style.display = 'none');
                 priceMonth.forEach((item)=> item.style.display = 'block');
             }
@@ -100,7 +99,60 @@ item.addEventListener('click',()=>{
     });
 
     //  addOns -------------------------------------------------------------------------
-    
+    document.querySelectorAll('.addOns-check').forEach((check)=>{
+        check.addEventListener('click',()=>{
+            console.log(check)
+            switch(check.id){
+                case 'multP':
+                    if(displayOn === true){
+                        addMoney = 10;
+                        total += 10;
+                    }else{
+                        addMoney = 1;
+                        total += 1;
+                    }
+                    add += `<div class="onlineSer">
+                    <p class="p-ser">Oline Service</p>
+                    <p class="p-money">+$${addMoney}/mo</p>
+                  </div>`
+                break;
+                case '1tb':
+                    if(displayOn === true){
+                        addMoney = 20;
+                        total += 20;
+                    }else{
+                        addMoney = 2;
+                        total += 2;
+                    }
+                    add.unshift(`<div class="onlineSer">
+                    <p class="p-ser">Larger Storage</p>
+                    <p class="p-money">+$${addMoney}/mo</p>
+                  </div>`)
+                break;
+                case 'custom':
+                    if(displayOn === true){
+                        addMoney = 20;
+                        total += 20;
+                    }else{
+                        addMoney = 2;
+                        total += 2;
+                    }
+                    if(check.checked){
+                    add += `<div class="onlineSer">
+                    <p class="p-ser">Customizable Profile</p>
+                    <p class="p-money">+$${addMoney}/mo</p>
+                  </div>`
+                    }else{
+                        add -= `<div class="onlineSer">
+                    <p class="p-ser">Customizable Profile</p>
+                    <p class="p-money">+$${addMoney}/mo</p>
+                  </div>`
+                    }
+                break;
+            }
+            console.log(add)
+        })
+    })
 
 
 // color de info page--------------------------------------------------------------------

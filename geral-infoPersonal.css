@@ -143,13 +143,13 @@ header{
 
 
 .infoPersonal{
-    display:none;
+    display:block;
 }
 .yourPlan{
     display:none;
 }
 .addOns{
-    display:block;
+    display:none;
 }
 .finish{
     display:none;
