@@ -76,7 +76,7 @@
               </div>
           </div>
           <div class="div__footer">
-            <button type="submit" id="enviar" form="formy" class="but-next">Next Step</button>
+            <button type="submit" id="enviar" form="formy" class="but-submit">Next Step</button>
           </div>
         </div>
         
@@ -88,7 +88,7 @@
                 <h1>Select your plan</h1>
                 <p id="p__info-plan">You have the option of monthly or yearly billing.</p>
                 <div class="yourplans-info">
-                  <div class="div-plans priceYM" id="arcarde">
+                  <div class="div-plans priceYM" id="arcade">
                       <img src="assets/images/icon-arcade.svg" alt="">
                       <div class="div-month ">
                           <p class="p-plan">Arcade</p>
@@ -133,6 +133,7 @@
                     </div>
                     <label for="years">Yearly</label>
                 </div>
+                <div class="error-yourPlan"><p>Select a plane to continue</p></div>
             </div>
         </div>
         <div class="div__footer">
@@ -148,7 +149,7 @@
             <h1>Pick add-ons</h1>
             <p id="p__addOns">Add-ons help enhance your gaming experience.</p>
             <div class="add_div-service">
-              <div class="check" ><input type="checkbox"></div>
+              <div class="check" ><input type="checkbox" name="isCheck"></div>
               <div class="add_div-Ps">
                 <p>Online service</p>
                 <p class="p-extra">Access to multiplayer games</p>
@@ -158,7 +159,7 @@
               </div>
             </div>
             <div class="add_div-service">
-              <div class="check" ><input type="checkbox"></div>
+              <div class="check" ><input type="checkbox" name="isCheck"></div>
               <div class="add_div-Ps">
                 <p >Larger storage</p>
                 <p class="p-extra">Extra 1TB of cloud save</p>
@@ -168,7 +169,7 @@
               </div>
             </div>
             <div class="add_div-service">
-              <div class="check"><input type="checkbox"></div>
+              <div class="check"><input type="checkbox" name="isCheck"></div>
               <div class="add_div-Ps">
                 <p >Customizable Profile</p>
                 <p class="p-extra">Custom theme on your profile</p>

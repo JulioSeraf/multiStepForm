@@ -70,3 +70,8 @@
 .info .month-year .radiodiv .radio-input:checked{
     background-color: white;
 }
+.info .error-yourPlan{
+    display: none;
+    text-align: center;
+    color: hsl(354, 84%, 57%);
+}

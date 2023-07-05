@@ -5,8 +5,13 @@ const infoPersonal = document.querySelector('.infoPersonal');
 const yourPlan = document.querySelector('.yourPlan');
 const addOns = document.querySelector('.addOns');
 const finish = document.querySelector('.finish');
-const confirm = false;
+let displayOn = false;
+let plan = null;
+let add = null;
 const butDisplays = document.querySelectorAll('.nav-but');
+const priceYears = document.querySelectorAll('.div-years');
+const priceMonth = document.querySelectorAll('.div-month');
+const errorYourPlan = document.querySelector('.error-yourPlan');
 const plans = [{
     arcade: 9,
     advanced:12,
@@ -16,6 +21,17 @@ const plans = [{
     advanced: 120,
     pro: 150
 }];
+
+class finalPlan{
+    constructor(info,plan,experience){
+        this.info = info;
+        this.plan = plan;
+        this.exp = experience;
+    }
+    info(){
+
+    }
+}
 // BackgroundColor of formulario page-------------------------------------------------------
 
 const enviar = document.getElementById('enviar').addEventListener('click',(e)=>{
@@ -34,25 +50,58 @@ s   }else{
 }
 });
 
-// buton de year/moth------------------------------------------------------------------
-        document.querySelectorAll('.priceYM').forEach((item)=>
-        item.addEventListener('click',(valor)=>{
-      
-            console.log(valor.target.id)
-    
-    } 
+// select plan and  buton de year/moth------------------------------------------------------------------
+const priceYM = document.querySelectorAll('.priceYM').forEach((item)=>
+item.addEventListener('click',()=>{
+    errorYourPlan.style.display = 'none';
+    let colorOff = document.querySelectorAll('.priceYM').forEach((item)=> item.style.backgroundColor = 'transparent');
+    switch(item.id){
+        case 'arcade':
+            colorOff;
+            item.style.backgroundColor = 'hsl(231, 100%, 99%)';
+            if(displayOn === true){
+                plan = 90;
+            }else{
+                plan = 9;
+            }
+            break;
+        case 'advance':
+            colorOff;
+            item.style.backgroundColor = 'hsl(231, 100%, 99%)';
+            if(displayOn === true){
+                plan = 120;
+            }else{
+                plan = 12;
+            }
+            break;
+        case 'pro':
+            colorOff;
+            item.style.backgroundColor = 'hsl(231, 100%, 99%)';
+            if(displayOn === true){
+                plan = 150;
+            }else{
+                plan = 15;
+            }
+            break
+                    }
+}
 ));
     document.querySelectorAll('.radio-input').forEach((but)=>{
         but.addEventListener('click', (e)=>{
             if(e.target.id === 'years'){
-                document.querySelectorAll('.div-years').forEach((item)=> item.style.display = 'block');
-                document.querySelectorAll('.div-month').forEach((item)=> item.style.display = 'none');
+                displayOn = true;
+                priceYears.forEach((item)=> item.style.display = 'block');
+                priceMonth.forEach((item)=> item.style.display = 'none');
             }else if(e.target.id === 'month'){
-                document.querySelectorAll('.div-years').forEach((item)=> item.style.display = 'none');
-                document.querySelectorAll('.div-month').forEach((item)=> item.style.display = 'block');
+                priceYears.forEach((item)=> item.style.display = 'none');
+                priceMonth.forEach((item)=> item.style.display = 'block');
             }
         })
     });
+
+    //  addOns -------------------------------------------------------------------------
+    
+
 
 // color de info page--------------------------------------------------------------------
 function colorInfoNo(){
@@ -81,9 +130,30 @@ const butBack = document.querySelectorAll('.but-back').forEach((item)=>{
             coloInfoPage(1);
             yourPlan.style.display = 'none';
             infoPersonal.style.display = 'block';
+        }else if(addOns.style.display === 'block'){
+            addOns.style.display = 'none';
+            yourPlan.style.display = 'block';
+        }else if(finish.style.display === 'block'){
+            finish.style.display = 'none';
+            addOns.style.display = 'block';
         }
     });
 });
+const butNext = document.querySelectorAll('.but-next').forEach((item)=>{
+    item.addEventListener('click',()=>{
+        if(plan !== null){
+            coloInfoPage(2);
+            yourPlan.style.display = 'none';
+            addOns.style.display = 'block';
+        }else if(plan === null){
+            errorYourPlan.style.display = 'block';
+        }else if(addOns.style.display === 'block'){
+            addOns.style.display = 'none';
+            finish.style.display = 'block';
+        }
+        
+    })
+})
 
 // info number page Background color----------------------------------------------------------
 
