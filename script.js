@@ -5,16 +5,19 @@ const infoPersonal = document.querySelector('.infoPersonal');
 const yourPlan = document.querySelector('.yourPlan');
 const addOns = document.querySelector('.addOns');
 const finish = document.querySelector('.finish');
+const thanksFinal = document.querySelector('.finish-thank');
 let displayOn = false;
 let plan = null;
 let add = [];
 let total = null;
 let addMoney = null;
+let addFinal = document.querySelector('.colorAdd');
 const butDisplays = document.querySelectorAll('.nav-but');
 const priceYears = document.querySelectorAll('.div-years');
 const priceMonth = document.querySelectorAll('.div-month');
 const errorYourPlan = document.querySelector('.error-yourPlan');
 const addOnsMoney = document.querySelectorAll('.p-moneyAddOns');
+const addCheck = document.querySelectorAll('.addOns-check');
 class finalPlan{
     constructor(info,plan,experience){
         this.info = info;
@@ -83,12 +86,20 @@ item.addEventListener('click',()=>{
         but.addEventListener('click', (e)=>{
             if(e.target.id === 'years'){
                 displayOn = true;
+                while(addFinal.lastChild){
+                    addFinal.removeChild(addFinal.lastChild)
+                }
+                addCheck.forEach((item)=> item.checked = false);
                 addOnsMoney[0].textContent = '+$10/yr';
                 addOnsMoney[1].textContent = '+$20/yr';
                 addOnsMoney[2].textContent = '+$20/yr';
                 priceYears.forEach((item)=> item.style.display = 'block');
                 priceMonth.forEach((item)=> item.style.display = 'none');
             }else if(e.target.id === 'month'){
+                while(addFinal.lastChild){
+                    addFinal.removeChild(addFinal.lastChild)
+                }
+                addCheck.forEach((item)=> item.checked = false);
                 addOnsMoney[0].textContent = '+$1/mo';
                 addOnsMoney[1].textContent = '+$2/mo';
                 addOnsMoney[2].textContent = '+$2/mo';
@@ -99,60 +110,94 @@ item.addEventListener('click',()=>{
     });
 
     //  addOns -------------------------------------------------------------------------
-    document.querySelectorAll('.addOns-check').forEach((check)=>{
+    addCheck.forEach((check)=>{
         check.addEventListener('click',()=>{
-            console.log(check)
+            let ym = 'mo';
             switch(check.id){
                 case 'multP':
                     if(displayOn === true){
+                        ym = 'yr';
                         addMoney = 10;
                         total += 10;
                     }else{
                         addMoney = 1;
                         total += 1;
                     }
-                    add += `<div class="onlineSer">
+                    let onlineSer =`<div id="oS" class="onlineSer">
                     <p class="p-ser">Oline Service</p>
-                    <p class="p-money">+$${addMoney}/mo</p>
-                  </div>`
+                    <p class="p-money">+$${addMoney}/${ym}</p>
+                  </div>`;
+                    if(check.checked === true){
+                       addFinal.innerHTML += onlineSer;
+                   }else{
+                    if(displayOn === true){
+                        total -= 10;
+                    }else{
+                        total -= 1;
+                    }
+                    let remoOnline = document.getElementById('oS');
+                    addFinal.removeChild(remoOnline);
+                  }
                 break;
                 case '1tb':
                     if(displayOn === true){
+                        ym = 'yr';
                         addMoney = 20;
                         total += 20;
                     }else{
                         addMoney = 2;
                         total += 2;
                     }
-                    add.unshift(`<div class="onlineSer">
+                    let largerS = `
+                    <div id="lS" class="onlineSer">
                     <p class="p-ser">Larger Storage</p>
-                    <p class="p-money">+$${addMoney}/mo</p>
-                  </div>`)
+                    <p class="p-money">+$${addMoney}/${ym}</p>
+                  </div>`
+                    if(check.checked === true){
+                        addFinal.innerHTML += largerS;
+                     }else{
+                    if(displayOn === true){
+                        total -= 20;
+                    }else{
+                        total -= 2;
+                    }
+                    let remolargeS = document.getElementById('lS');
+                    addFinal.removeChild(remolargeS);
+                  }
                 break;
                 case 'custom':
                     if(displayOn === true){
+                        ym = 'yr';
                         addMoney = 20;
                         total += 20;
                     }else{
                         addMoney = 2;
                         total += 2;
                     }
-                    if(check.checked){
-                    add += `<div class="onlineSer">
+                    let custome =`
+                    <div id="cT" class="onlineSer">
                     <p class="p-ser">Customizable Profile</p>
-                    <p class="p-money">+$${addMoney}/mo</p>
-                  </div>`
+                    <p class="p-money">+$${addMoney}/${ym}</p>
+                  </div>`;                    
+                   if(check.checked === true){
+                    addFinal.innerHTML += custome;
                     }else{
-                        add -= `<div class="onlineSer">
-                    <p class="p-ser">Customizable Profile</p>
-                    <p class="p-money">+$${addMoney}/mo</p>
-                  </div>`
+                    if(displayOn === true){
+                        total -= 20;
+                    }else{
+                        total -= 2;
                     }
+                    let remoCustume = document.getElementById('cT');
+                    addFinal.removeChild(remoCustume);
+                  }
                 break;
             }
             console.log(add)
         })
     })
+
+// finish page --------------------------------------------------------------------------
+
 
 
 // color de info page--------------------------------------------------------------------
@@ -193,15 +238,21 @@ const butBack = document.querySelectorAll('.but-back').forEach((item)=>{
 });
 const butNext = document.querySelectorAll('.but-next').forEach((item)=>{
     item.addEventListener('click',()=>{
-        if(plan !== null){
+        if(yourPlan.style.display === 'block' && plan !== null){
             coloInfoPage(2);
             yourPlan.style.display = 'none';
             addOns.style.display = 'block';
-        }else if(plan === null){
-            errorYourPlan.style.display = 'block';
         }else if(addOns.style.display === 'block'){
             addOns.style.display = 'none';
             finish.style.display = 'block';
+        }else if(finish.style.display === 'block'){
+            finish.style.display = 'none';
+            thanksFinal.style.display = 'block';
+            let total = document.querySelector('.total');
+            
+        }
+        if(plan === null){
+            errorYourPlan.style.display = 'block';
         }
         
     })
