@@ -9,8 +9,11 @@ const thanksFinal = document.querySelector('.finish-thank');
 let displayOn = false;
 let plan = null;
 let add = [];
-let total = null;
+let total = '';
 let addMoney = null;
+let yearMonth = 'month';
+let totalPlan = '';
+let ym = 'mo';
 let addFinal = document.querySelector('.colorAdd');
 const butDisplays = document.querySelectorAll('.nav-but');
 const priceYears = document.querySelectorAll('.div-years');
@@ -18,6 +21,8 @@ const priceMonth = document.querySelectorAll('.div-month');
 const errorYourPlan = document.querySelector('.error-yourPlan');
 const addOnsMoney = document.querySelectorAll('.p-moneyAddOns');
 const addCheck = document.querySelectorAll('.addOns-check');
+const resPlan = document.getElementById('resPlan');
+let res = document.querySelector('.total');
 class finalPlan{
     constructor(info,plan,experience){
         this.info = info;
@@ -56,27 +61,27 @@ item.addEventListener('click',()=>{
             colorOff;
             item.style.backgroundColor = 'hsl(231, 100%, 99%)';
             if(displayOn === true){
-                plan = 90;
+                plan = parseInt(90);
             }else{
-                plan = 9;
+                plan = parseInt(9);
             }
             break;
         case 'advance':
             colorOff;
             item.style.backgroundColor = 'hsl(231, 100%, 99%)';
             if(displayOn === true){
-                plan = 120;
+                plan = parseInt(120);
             }else{
-                plan = 12;
+                plan = parseInt(12);
             }
             break;
         case 'pro':
             colorOff;
             item.style.backgroundColor = 'hsl(231, 100%, 99%)';
             if(displayOn === true){
-                plan = 150;
+                plan = parseInt(150);
             }else{
-                plan = 15;
+                plan = parseInt(15);
             }
             break
                     }
@@ -85,6 +90,8 @@ item.addEventListener('click',()=>{
     document.querySelectorAll('.radio-input').forEach((but)=>{
         but.addEventListener('click', (e)=>{
             if(e.target.id === 'years'){
+                yearMonth = 'year';
+                ym = 'yr';
                 displayOn = true;
                 while(addFinal.lastChild){
                     addFinal.removeChild(addFinal.lastChild)
@@ -112,16 +119,14 @@ item.addEventListener('click',()=>{
     //  addOns -------------------------------------------------------------------------
     addCheck.forEach((check)=>{
         check.addEventListener('click',()=>{
-            let ym = 'mo';
             switch(check.id){
                 case 'multP':
                     if(displayOn === true){
-                        ym = 'yr';
                         addMoney = 10;
-                        total += 10;
+                        totalPlan += parseInt(10);
                     }else{
                         addMoney = 1;
-                        total += 1;
+                        totalPlan += parseInt(1);
                     }
                     let onlineSer =`<div id="oS" class="onlineSer">
                     <p class="p-ser">Oline Service</p>
@@ -131,9 +136,9 @@ item.addEventListener('click',()=>{
                        addFinal.innerHTML += onlineSer;
                    }else{
                     if(displayOn === true){
-                        total -= 10;
+                        totalPlan -= parseInt(10);
                     }else{
-                        total -= 1;
+                        totalPlan-= parseInt(1);
                     }
                     let remoOnline = document.getElementById('oS');
                     addFinal.removeChild(remoOnline);
@@ -141,12 +146,11 @@ item.addEventListener('click',()=>{
                 break;
                 case '1tb':
                     if(displayOn === true){
-                        ym = 'yr';
                         addMoney = 20;
-                        total += 20;
+                        totalPlan += parseInt(20);
                     }else{
                         addMoney = 2;
-                        total += 2;
+                        totalPlan += parseInt(2);
                     }
                     let largerS = `
                     <div id="lS" class="onlineSer">
@@ -157,9 +161,9 @@ item.addEventListener('click',()=>{
                         addFinal.innerHTML += largerS;
                      }else{
                     if(displayOn === true){
-                        total -= 20;
+                        totalPlan -= parseInt(20);
                     }else{
-                        total -= 2;
+                        totalPlan -= parseInt(2);
                     }
                     let remolargeS = document.getElementById('lS');
                     addFinal.removeChild(remolargeS);
@@ -167,12 +171,11 @@ item.addEventListener('click',()=>{
                 break;
                 case 'custom':
                     if(displayOn === true){
-                        ym = 'yr';
                         addMoney = 20;
-                        total += 20;
+                        totalPlan += parseInt(20);
                     }else{
                         addMoney = 2;
-                        total += 2;
+                        totalPlan += parseInt(2);
                     }
                     let custome =`
                     <div id="cT" class="onlineSer">
@@ -183,23 +186,19 @@ item.addEventListener('click',()=>{
                     addFinal.innerHTML += custome;
                     }else{
                     if(displayOn === true){
-                        total -= 20;
+                        totalPlan -= parseInt(20);
                     }else{
-                        total -= 2;
+                        totalPlan -= parseInt(2);;
                     }
                     let remoCustume = document.getElementById('cT');
                     addFinal.removeChild(remoCustume);
                   }
                 break;
             }
-            console.log(add)
         })
     })
 
 // finish page --------------------------------------------------------------------------
-
-
-
 // color de info page--------------------------------------------------------------------
 function colorInfoNo(){
     butDisplays[0].style.backgroundColor = "transparent";
@@ -233,6 +232,9 @@ const butBack = document.querySelectorAll('.but-back').forEach((item)=>{
         }else if(finish.style.display === 'block'){
             finish.style.display = 'none';
             addOns.style.display = 'block';
+            resPlan.textContent = `$/`;
+            res.innerHTML = `<p >Total (per ${yearMonth})</p>
+            <p id="p-money">+$${plan}/${ym}</p>`
         }
     });
 });
@@ -245,11 +247,13 @@ const butNext = document.querySelectorAll('.but-next').forEach((item)=>{
         }else if(addOns.style.display === 'block'){
             addOns.style.display = 'none';
             finish.style.display = 'block';
+            resPlan.textContent = `$${plan}/${ym}`;
+            totalPlan += plan;
+            res.innerHTML = `<p >Total (per ${yearMonth})</p>
+            <p id="p-money">+$${totalPlan}/${ym}</p>`
         }else if(finish.style.display === 'block'){
             finish.style.display = 'none';
             thanksFinal.style.display = 'block';
-            let total = document.querySelector('.total');
-            
         }
         if(plan === null){
             errorYourPlan.style.display = 'block';
