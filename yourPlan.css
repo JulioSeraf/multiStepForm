@@ -30,6 +30,7 @@
     color: hsl(213, 96%, 18%);
 }
 .div-plans div .p-cash{
+    margin: 10px 0;
     color:  hsl(231, 11%, 63%);
 }
 .div-plans div{

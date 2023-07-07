@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 :root{
     
 --marineblue: hsl(213, 96%, 18%);
@@ -25,6 +25,7 @@ body{
     flex-direction: column;
     width: 100vw;
     min-height: 100Vh;
+    font-family: 'Ubuntu', sans-serif;
 }
 header{
     display:flex;
@@ -81,7 +82,6 @@ header{
 .mainGeneral .info #p__personal-info{
     width: 100%;
     color:hsla(213, 96%, 18%, 0.509) ;
-    font-weight: bold;
     margin: 15px 0;
 }
 .mainGeneral .info .form-label{
@@ -91,8 +91,13 @@ header{
 .mainGeneral .info .form-input{
     width: 100%;
     padding:15px;
+    border-radius: 10px;
+    color: var(--marineblue);
     border: 1px solid gray;
     margin-bottom: 15px;
+}
+.mainGeneral .info .form-input:hover{
+    border-color:var(--marineblue);
 }
 .mainGeneral .info .divNumber{
     position: relative;
@@ -122,11 +127,17 @@ header{
 .div__footer .but-next,.but-submit{
     float: right;
 }
+.div__footer .but-next:hover,.but-submit:hover{
+    background-color: hsl(228, 100%, 84%) ;
+}
 .div__footer .but-back{
     margin:15px 0 0 15px ;
     background-color: hsl(231, 100%, 99%);
     color: gray;
 
+}
+.div__footer .but-back:hover{
+    color: var(--marineblue);
 }
 .attribution{
     font-size: 0.5em;

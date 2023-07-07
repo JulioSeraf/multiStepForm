@@ -64,6 +64,9 @@
 .onlineSer a{
     color:gray;
 }
+.onlineSer a:hover{
+    color:var(--marineblue);
+}
 .total{
     margin: 10px 5px;
 }
