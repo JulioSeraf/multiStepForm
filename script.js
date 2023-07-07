@@ -273,4 +273,9 @@ function backToPlan(){
     totalPlan = 0;
     finish.style.display = 'none';
     yourPlan.style.display = 'block';
+    butDisplays[3].style.cssText = 'background-color:transparent); color:white;';
+    butDisplays[1].style.cssText = 'background-color:hsl(206, 94%, 87%); color:hsl(213, 96%, 18%);';
+
+
+
 }
