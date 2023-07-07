@@ -9,10 +9,10 @@ const thanksFinal = document.querySelector('.finish-thank');
 let displayOn = false;
 let plan = null;
 let add = [];
-let total = '';
+let total = 0;
 let addMoney = null;
 let yearMonth = 'month';
-let totalPlan = '';
+let totalPlan = 0;
 let ym = 'mo';
 let addFinal = document.querySelector('.colorAdd');
 const butDisplays = document.querySelectorAll('.nav-but');
@@ -123,10 +123,10 @@ item.addEventListener('click',()=>{
                 case 'multP':
                     if(displayOn === true){
                         addMoney = 10;
-                        totalPlan += parseInt(10);
+                        totalPlan += 10;
                     }else{
                         addMoney = 1;
-                        totalPlan += parseInt(1);
+                        totalPlan += 1;
                     }
                     let onlineSer =`<div id="oS" class="onlineSer">
                     <p class="p-ser">Oline Service</p>
@@ -136,9 +136,9 @@ item.addEventListener('click',()=>{
                        addFinal.innerHTML += onlineSer;
                    }else{
                     if(displayOn === true){
-                        totalPlan -= parseInt(10);
+                        totalPlan -= 10;
                     }else{
-                        totalPlan-= parseInt(1);
+                        totalPlan-= 1;
                     }
                     let remoOnline = document.getElementById('oS');
                     addFinal.removeChild(remoOnline);
@@ -147,10 +147,10 @@ item.addEventListener('click',()=>{
                 case '1tb':
                     if(displayOn === true){
                         addMoney = 20;
-                        totalPlan += parseInt(20);
+                        totalPlan += 20;
                     }else{
                         addMoney = 2;
-                        totalPlan += parseInt(2);
+                        totalPlan += 2;
                     }
                     let largerS = `
                     <div id="lS" class="onlineSer">
@@ -161,9 +161,9 @@ item.addEventListener('click',()=>{
                         addFinal.innerHTML += largerS;
                      }else{
                     if(displayOn === true){
-                        totalPlan -= parseInt(20);
+                        totalPlan -= 20;
                     }else{
-                        totalPlan -= parseInt(2);
+                        totalPlan -= 2;
                     }
                     let remolargeS = document.getElementById('lS');
                     addFinal.removeChild(remolargeS);
@@ -172,10 +172,10 @@ item.addEventListener('click',()=>{
                 case 'custom':
                     if(displayOn === true){
                         addMoney = 20;
-                        totalPlan += parseInt(20);
+                        totalPlan += 20;
                     }else{
                         addMoney = 2;
-                        totalPlan += parseInt(2);
+                        totalPlan += 2;
                     }
                     let custome =`
                     <div id="cT" class="onlineSer">
@@ -186,9 +186,9 @@ item.addEventListener('click',()=>{
                     addFinal.innerHTML += custome;
                     }else{
                     if(displayOn === true){
-                        totalPlan -= parseInt(20);
+                        totalPlan -= 20;
                     }else{
-                        totalPlan -= parseInt(2);;
+                        totalPlan -= 2;;
                     }
                     let remoCustume = document.getElementById('cT');
                     addFinal.removeChild(remoCustume);
@@ -229,6 +229,7 @@ const butBack = document.querySelectorAll('.but-back').forEach((item)=>{
         }else if(addOns.style.display === 'block'){
             addOns.style.display = 'none';
             yourPlan.style.display = 'block';
+            
         }else if(finish.style.display === 'block'){
             finish.style.display = 'none';
             addOns.style.display = 'block';
